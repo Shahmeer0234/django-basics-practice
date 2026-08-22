@@ -14,7 +14,9 @@ Welcome to my **Django Basics Practice** repository! This repository contains my
 - Foreign Keys & Model Relationships (`on_delete`, `related_name`)
 - Schema Migrations (`makemigrations` & `migrate`)
 - Django Shell (`python manage.py shell`) & ORM Queries
-- Basic API Endpoints (`GET` requests for JSON output)
+- Custom Forms (`forms.py`) & HTML Rendering (`render`)
+- Global & App-level Custom Templates Configuration (`settings.py`)
+- Basic API Endpoints (`GET` and `POST` requests handling)
 
 ---
 
@@ -22,6 +24,7 @@ Welcome to my **Django Basics Practice** repository! This repository contains my
 
 - Python
 - Django
+- HTML5 / CSS3
 - SQLite (Default Database)
 - Git & GitHub
 - Django REST Framework (Upcoming)
@@ -31,15 +34,16 @@ Welcome to my **Django Basics Practice** repository! This repository contains my
 ## 📁 Projects in this Repository
 
 1. **`first_project/`** - Initial setup and basic request-response flow with `HttpResponse`.
-2. **`student_management/`** - Full backend data model for a Student Management System using Foreign Keys (`Department` & `Student` models) and a basic JSON API endpoint (`/api/students/`).
+2. **`student_management/`** - Backend data model for a Student Management System using Foreign Keys (`Department` & `Student` models), custom `forms.py` handling, HTML templates rendering, and a basic JSON API endpoint (`/api/students/`).
 
 ```text
 django-basics-practice/
 │
 ├── first_project/          # Practice Project 1
-├── student_management/      # Practice Project 2 (Student Management System)
-│   ├── student_management/
-│   ├── students/
+├── student_management/     # Practice Project 2 (Student Management System)
+│   ├── student_management/ # Core project configuration
+│   ├── students/           # Main app (Models, Views, Forms, URLs)
+│   ├── templates/          # Global HTML Templates (home.html)
 │   └── manage.py
 ├── .gitignore
 └── README.md
