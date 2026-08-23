@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>📌 Pending Tasks</h2>
+{% if pending_tasks %}
+    <ul>
+    {% for task in pending_tasks %}
+        <li style="margin-bottom: 10px;">
+            <strong>{{ task.title }}</strong> [{{ task.category }}] - Due: {{ task.due_date }}
+            <a href="{% url 'mark_complete' task.id %}" class="btn">Mark Done</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No pending tasks! 🎉</p>
+{% endif %}
+
+<hr style="margin: 25px 0;">
+
+<h2>✅ Completed History</h2>
+{% if completed_tasks %}
+    <ul>
+    {% for task in completed_tasks %}
+        <li style="color: #6c757d; margin-bottom: 8px;">
+            ✔ {{ task.title }} [{{ task.category }}]
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No completed tasks yet.</p>
+{% endif %}
+{% endblock %}
