@@ -1,0 +1,25 @@
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Form</title>
+</head>
+<body>
+    <h2>Enter Your Name</h2>
+
+    <!-- Form Submit Action -->
+    <form method="POST">
+        {% csrf_token %} <!-- Django Security Token (Zaruri hai) -->
+        {{ form.as_p }}  <!-- Form fields ko Paragraph tags mein render karega -->
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Data Submit hone par screen par show karne ke liye -->
+    {% if submitted_name %}
+        <hr>
+        <h3>Submitted Data:</h3>
+        <p>Hello, {{ submitted_name }}!</p>
+    {% endif %}
+</body>
+</html>
